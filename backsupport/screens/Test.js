@@ -1,0 +1,107 @@
+import { useEffect, useState, TouchableHighlight } from 'react';
+import { View, SafeAreaView, FlatList, Text } from 'react-native';
+import { Image, StyleSheet, Pressable } from 'react-native';
+import { createStackNavigator, createAppContainer } from  "@react-navigation/native";
+
+import logo from "../assets/images/logo.png"
+import { COLORS, FONTS } from "../constants";
+import { HomeHeader, FocusedStatusBar } from '../components';
+import Login from './Login';
+import ResetPwd from './ResetPwd';
+import Home from './Home';
+//import styles from '../assets/style';
+
+//export default class Button
+
+
+
+import { TouchableOpacity } from "react-native";
+
+const FlexDirectionBasics = () => {
+  const [flexDirection, setflexDirection] = useState("column");
+
+  return (
+	    <PreviewLayout
+	      values={["column", "row", "row-reverse", "column-reverse"]}
+	      selectedValue={flexDirection}
+	      setSelectedValue={setflexDirection}
+	    >
+	    </PreviewLayout>
+  );
+};
+
+const PreviewLayout = ({
+  values,
+  selectedValue,
+  setSelectedValue,
+}) => (
+  <View style={{ padding: 10, flex: 1 }}>
+    <View style={styles.row}>
+      {values.map((value) => (
+        <TouchableOpacity
+          key={value}
+          onPress={() => setSelectedValue(value)}
+          style={[
+            styles.button,
+            selectedValue === value && styles.selected,
+          ]}
+        >
+          <Text
+            style={[
+              styles.buttonLabel,
+              selectedValue === value && styles.selectedLabel,
+            ]}
+          >
+            {value}
+          </Text>
+        </TouchableOpacity>
+      ))}
+    </View>
+  </View>
+);
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginTop: 8,
+    backgroundColor: "aliceblue",
+  },
+  box: {
+    width: 50,
+    height: 50,
+  },
+  row: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+  },
+  button: {
+    paddingHorizontal: 8,
+    paddingVertical: 6,
+    borderRadius: 4,
+    backgroundColor: "oldlace",
+    alignSelf: "flex-start",
+    marginHorizontal: "1%",
+    marginBottom: 6,
+    minWidth: "48%",
+    textAlign: "center",
+  },
+  selected: {
+    backgroundColor: "coral",
+    borderWidth: 0,
+  },
+  buttonLabel: {
+    fontSize: 12,
+    fontWeight: "500",
+    color: "coral",
+  },
+  selectedLabel: {
+    color: "white",
+  },
+  label: {
+    textAlign: "center",
+    marginBottom: 10,
+    fontSize: 24,
+  },
+});
+
+export default FlexDirectionBasics;

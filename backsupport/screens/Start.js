@@ -1,23 +1,29 @@
-import { useState } from 'react';
-import { View, SafeAreaView, FlatList, Text } from 'react-native';
-import { Image, StyleSheet, Pressable } from 'react-native';
-import { createStackNavigator, createAppContainer } from  "@react-navigation/native";
+import { View, SafeAreaView, Text } from 'react-native';
+import { Image, Pressable } from 'react-native';
 
 import logo from "../assets/images/logo.png"
-import { COLORS, FONTS } from "../constants";
-import { HomeHeader, FocusedStatusBar } from '../components';
-import Login from './Login';
-import ResetPwd from './ResetPwd';
-import Home from './Home';
-import ChatBot from './ChatBot';
+import { FocusedStatusBar } from '../components';
 import styles from '../assets/style'
 
 //export default class Button
 
 const Start = ({ navigation }) => {
 
+	function Root() {
+		return (
+		  <Stack.Navigator>
+			<Stack.Screen name="Goals" component={'./Goals'} />
+		  </Stack.Navigator>
+		);
+	  }
+
 	return (
 		<SafeAreaView style={{ flex: 1 }}>
+			<View style={styles.container}>
+				<Pressable onPress={()=>navigation.navigate("Home")}>
+					<Image source={require('../assets/icons/back.png')} style={styles.icon} resizeMode="contain" resizeMethod="resize" />
+				</Pressable>
+			</View>
 			<FocusedStatusBar backgroundColor='#001F2D'/>
 			<View style={styles.centered}>
 				<View style={{ zIndex: 0 }}>
@@ -27,10 +33,10 @@ const Start = ({ navigation }) => {
 				<Pressable style={styles.buttonStartScreen} onPress={()=>navigation.navigate("ChatBot")}>
 						<Text style={styles.buttonText}>Chat Bot</Text>
 				</Pressable>
-				<Pressable style={styles.buttonStartScreen} onPress={()=>navigation.navigate("ChatBot")}>
+				<Pressable style={styles.buttonStartScreen} onPress={()=>navigation.navigate("Favourite")}>
 						<Text style={styles.buttonText}>Favourites</Text>
 				</Pressable>
-				<Pressable style={styles.buttonStartScreen} onPress={()=>navigation.navigate("ChatBot")}>
+				<Pressable style={styles.buttonStartScreen} onPress={()=>navigation.navigate("Goal")}>
 						<Text style={styles.buttonText}>Goals</Text>
 				</Pressable>
 			</View>

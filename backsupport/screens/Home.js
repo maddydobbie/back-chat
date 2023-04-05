@@ -1,14 +1,8 @@
-import { useState } from 'react';
-import { View, SafeAreaView, FlatList, Text } from 'react-native';
-import { Image, StyleSheet, Pressable } from 'react-native';
-import { createStackNavigator, createAppContainer } from  "@react-navigation/native";
+import { View, SafeAreaView, Text } from 'react-native';
+import { Image, Pressable } from 'react-native';
 
 import logo from "../assets/images/logo.png"
-import { COLORS, FONTS } from "../constants";
-import { HomeHeader, FocusedStatusBar } from '../components';
-import Login from './Login';
-import ResetPwd from './ResetPwd';
-import Start from './Start';
+import { FocusedStatusBar } from '../components';
 import styles from '../assets/style'
 
 //export default class Button

@@ -16,15 +16,16 @@ cors = CORS(app)
 db = SQLAlchemy()
 db.init_app(app)
 
-from backend.model import *
 
 if not path.exists('./app.db'):
    # from backend.model import *
     print('Creating app.db...')
     with app.app_context():
         db.create_all()
+        db.session.commit()
     # chatbot tings
-        db.session.query(Question).delete()
+        from backend.model import Question
+        # db.session.query(Question).delete()
         # open file
         with open('./backend/chatbot.csv', 'r') as csvfile:
             datareader = csv.reader(csvfile)

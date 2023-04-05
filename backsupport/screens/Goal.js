@@ -15,7 +15,7 @@ import styles from '../assets/style'
 //export default class Button
 
 
-const ChatBot = ({ navigation }) => {
+const Goals = ({ navigation }) => {
 
 	const [question, setQuestion] = useState('');
 	const [r1, setR1] = useState('');
@@ -97,11 +97,6 @@ const ChatBot = ({ navigation }) => {
 
 	return (
 		<SafeAreaView style={{ flex: 1 }}>
-			<View style={styles.container}>
-				<Pressable onPress={()=>navigation.navigate("Start")}>
-					<Image source={require('../assets/icons/back.png')} style={styles.icon} resizeMode="contain" resizeMethod="resize" />
-				</Pressable>
-			</View>
 			<FocusedStatusBar backgroundColor='#001F2D'/>
 			<View style={styles.centered}>
 				<View style={styles.chatBotBackground}>
@@ -149,4 +144,4 @@ const ChatBot = ({ navigation }) => {
 	)
 }
 
-export default ChatBot
+export default Goals

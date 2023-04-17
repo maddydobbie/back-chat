@@ -51,17 +51,19 @@ const Goals = ({ navigation }) => {
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({ title: data["title"], description: data["decription"], date: data["date"] })
 		};
-
+		console.log("here???");
 		fetch('https://back-support-thesis.herokuapp.com/goal', requestOptions)
-	    .then((response) => {
-	    	// const json = response.json()
+		.then((response) => {
+			console.log("did we get hre?");
+	    	const res = response.json();
+			console.log(res);
 	    	console.log("new goal?");
 	    	// console.log(json);
-	    	console.log("test");
 			response.text().then(b => console.log("BLOB", b))
 	    	return response;
 	    })
 		.then((json) => {	
+			console.log(json)
 			if (json.success == true) {
 	    		// clsoe modal
 				// display new goal on goal page

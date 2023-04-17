@@ -22,7 +22,6 @@ if not path.exists('./app.db'):
    # from backend.model import *
     print('Creating app.db...')
     with app.app_context():
-        db.create_all()
         db.session.commit()
     # chatbot tings
         print("im new max")

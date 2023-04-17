@@ -37,8 +37,6 @@ const Register = ({ navigation }) => {
 	const emailWatch = watch('email');
 	const pwdWatch = watch('pwd');
 	const usernameWatch = watch('username');
-	//console.log(emailWatch);
-	//console.log(pwdWatch);
 
 	function submit(data) {
 		console.log("submitted");

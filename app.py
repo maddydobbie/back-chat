@@ -117,6 +117,8 @@ def goal():
     db.session.add(goal)
     db.session.commit()
 
+    print("sucessfully added goal to db")
+
     return jsonify({
         "success": True
     })

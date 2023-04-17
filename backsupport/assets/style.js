@@ -35,7 +35,7 @@ export default StyleSheet.create({
     },
     buttonTextSecondary: {
         fontSize: 25,
-        fontcolor: '#14213D',
+        color: '#14213D',
         textAlign: "center",
         justifyContent: "center",
         lineHeight: 25,

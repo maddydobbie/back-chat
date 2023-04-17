@@ -63,13 +63,9 @@ def signup():
             "validMsg":"Malformed user information"
         })
 
-    # check to see if db has the email already, if so return error
-
-
     user = User(email = content["email"], name = content["name"], username = content["username"], password = content["password"])
     db.session.add(user)
     db.session.commit()
-
 
     return jsonify({
         "success": True
@@ -113,13 +109,13 @@ def login():
 
 @app.route('/goal', methods=['POST', 'GET'])
 def goal():
-    #content = request.json 
+    content = request.json 
     print("PLEASE GOD")
 
     # add goal to database
-    #goal = Goal(title = content["title"], description = content["description"], date = content["date"] )
-    #db.session.add(goal)
-    #db.session.commit()
+    goal = Goal(title = content["title"], description = content["description"], date = content["date"] )
+    db.session.add(goal)
+    db.session.commit()
 
     print("sucessfully added goal to db")
 

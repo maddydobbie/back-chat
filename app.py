@@ -33,7 +33,7 @@ if not path.exists('./app.db'):
             print(datareader)
             count = 0
             for row in datareader:
-                print("thisss is row" + str(row))
+                print("this is row" + str(row))
                 q = Question(id = count, question = row[0], category = row[1], response1 = row[2], response2 = row[3], response3 = row[4], response4 = row[5], rGood = row[6], rBad = row[7], rEnd = row[8], rChange = row[9], rGoal = row[10], cGood = row[11], cBad = row[12], cChange = row[13], cEnd = row[14], cGoal = row[15])
                 db.session.add(q)
                 print(q)
@@ -42,6 +42,7 @@ if not path.exists('./app.db'):
 
 @app.route('/')
 def serve():
+    print("HIT THE HOMEPAGE")
     return "Flask backend for BackSupport. Deployed on Heroku. See https://github.com/maddydobbie/BackSupport for more information."
 
 
@@ -112,13 +113,13 @@ def login():
 
 @app.route('/goal', methods=['POST', 'GET'])
 def goal():
-    content = request.json 
-    print(content)
+    #content = request.json 
+    print("PLEASE GOD")
 
     # add goal to database
-    goal = Goal(title = content["title"], description = content["description"], date = content["date"] )
-    db.session.add(goal)
-    db.session.commit()
+    #goal = Goal(title = content["title"], description = content["description"], date = content["date"] )
+    #db.session.add(goal)
+    #db.session.commit()
 
     print("sucessfully added goal to db")
 

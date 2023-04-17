@@ -40,38 +40,7 @@ const Goals = ({ navigation }) => {
 	const handleModal = () => setIsModalVisible(() => !isModalVisible);
 
 	function submit(data) {
-		// console.log("goal submitted");
-		// console.log(data)
-		// const requestOptions = {
-	    //     method: 'POST',
-	    //     headers: { 'Content-Type': 'application/json' },
-	    //     body: JSON.stringify({ title: data["title"], description: data["decription"], date: data["date"] })
-	    // };
-		// console.log("this is request options")
-	    // console.log(requestOptions)
-	    // fetch('https://back-support-thesis.herokuapp.com/goal', requestOptions)
-	    // .then((response) => {
-	    // 	console.log(response);
-	    // 	console.log("new goal?");
-	    // 	return response.json();
-	    // })
-	    // .then((json) => {
-	    // 	console.log(json);
-	    // 	if (json.success == true) {
-	    // 		// clsoe modal
-		// 		// display new goal on goal page
-	    // 		console.log("yay added a goal");
-	    // 	} else {
-	    // 		// alert 
-	    // 		console.log("nope youre a dummy.");
-	    // 		title = ' ';
-		// 		decription = ' ';
-		// 		date = ' ';
-	    // 	}
-	    // })
-	    // .catch((error) => console.error(error));
-
-		// reset();
+		
 
 
 		console.log("hello");
@@ -85,9 +54,12 @@ const Goals = ({ navigation }) => {
 
 		fetch('https://back-support-thesis.herokuapp.com/goal', requestOptions)
 	    .then((response) => {
-	    	console.log(response.json());
+	    	// const json = response.json()
 	    	console.log("new goal?");
-	    	return response.json();
+	    	// console.log(json);
+	    	console.log("test");
+			response.text().then(b => console.log("BLOB", b))
+	    	return response;
 	    })
 		.then((json) => {	
 			if (json.success == true) {

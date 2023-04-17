@@ -27,7 +27,7 @@ if not path.exists('./app.db'):
     # chatbot tings
         print("im new max")
         db.session.query(Question).delete()
-        open file
+        #open file
         with open('./backend/chatbot.csv', 'r') as csvfile:
             datareader = csv.reader(csvfile)
             print(datareader)

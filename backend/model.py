@@ -12,7 +12,8 @@ class User(db.Model):
 
 class Question(db.Model):
     __tablename__ = 'Question'
-    question = db.Column(db.String(40), primary_key=True, nullable=False)
+    id = db.Column(db.String(40), primary_key=True, nullable=False)
+    question = db.Column(db.String(40), nullable=False)
     category = db.Column(db.String(40), nullable=False)
     response1 = db.Column(db.String(40), nullable=False)
     response2 = db.Column(db.String(40), nullable=False)

@@ -31,12 +31,14 @@ if not path.exists('./app.db'):
         with open('./backend/chatbot.csv', 'r') as csvfile:
             datareader = csv.reader(csvfile)
             print(datareader)
+            count = 0
             for row in datareader:
                 print("thisss is row" + str(row))
-                q = Question(question = row[0], category = row[1], response1 = row[2], response2 = row[3], response3 = row[4], response4 = row[5], rGood = row[6], rBad = row[7], rEnd = row[8], rChange = row[9], rGoal = row[10], cGood = row[11], cBad = row[12], cChange = row[13], cEnd = row[14], cGoal = row[15])
+                q = Question(id = count, question = row[0], category = row[1], response1 = row[2], response2 = row[3], response3 = row[4], response4 = row[5], rGood = row[6], rBad = row[7], rEnd = row[8], rChange = row[9], rGoal = row[10], cGood = row[11], cBad = row[12], cChange = row[13], cEnd = row[14], cGoal = row[15])
                 db.session.add(q)
                 print(q)
                 db.session.commit()
+                count += 1
 
 @app.route('/')
 def serve():

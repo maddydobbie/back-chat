@@ -6,7 +6,7 @@ import json
 
 from os import path
 from backend.config import Config
-from backend.model import Goal
+from backend.model import Goal, User
 
 app = Flask(__name__,static_folder='backsupport/build',static_url_path='')
 
@@ -75,7 +75,7 @@ def signup():
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
-    content = request.json()
+    content = request.json
     print(content)
 
     if not content:

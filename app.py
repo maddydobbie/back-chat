@@ -75,7 +75,7 @@ def signup():
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
-    content = request.json 
+    content = request.json()
     print(content)
 
     if not content:

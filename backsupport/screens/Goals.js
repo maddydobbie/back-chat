@@ -72,6 +72,8 @@ const Goals = ({ navigation }) => {
 	    // .catch((error) => console.error(error));
 
 		// reset();
+
+
 		console.log("hello");
 		console.log(data);
 
@@ -87,6 +89,23 @@ const Goals = ({ navigation }) => {
 	    	console.log("new goal?");
 	    	return response.json();
 	    })
+		.then((json) => {	
+			if (json.success == true) {
+	    		// clsoe modal
+				// display new goal on goal page
+	    		console.log("yay added a goal");
+	    	} else {
+	    		// alert 
+	    		console.log("nope youre a dummy.");
+	    		title = ' ';
+				decription = ' ';
+				date = ' ';
+	    	}
+		})
+		.catch((error) => console.error(error));
+
+		reset();
+		
 	}
 
 	return (

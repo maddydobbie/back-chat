@@ -6,6 +6,7 @@ import json
 
 from os import path
 from backend.config import Config
+from backend.model import Goal
 
 app = Flask(__name__,static_folder='backsupport/build',static_url_path='')
 
@@ -72,7 +73,7 @@ def signup():
     })
 
 
-@app.route('/login', methods=['POST'])
+@app.route('/login', methods=['POST', 'GET'])
 def login():
     content = request.json 
     print(content)
@@ -107,13 +108,13 @@ def login():
         "success": True
     })
 
-@app.route('/goal', methods=['POST'])
+@app.route('/goal', methods=['POST', 'GET'])
 def goal():
     content = request.json 
     print(content)
 
     # add goal to database
-    goal = User(title = content["title"], description = content["description"], date = content["date"] )
+    goal = Goal(title = content["title"], description = content["description"], date = content["date"] )
     db.session.add(goal)
     db.session.commit()
 

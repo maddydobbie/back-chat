@@ -25,6 +25,7 @@ if not path.exists('./app.db'):
         db.create_all()
         db.session.commit()
     # chatbot tings
+        print("im new max")
         from backend.model import Question
         # db.session.query(Question).delete()
         # open file

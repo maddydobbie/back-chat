@@ -21,7 +21,7 @@ const Start = ({ navigation }) => {
 		<SafeAreaView style={{ flex: 1 }}>
 			<View style={styles.container}>
 				<Pressable onPress={()=>navigation.navigate("Home")}>
-					<Image source={require('../assets/icons/back.png')} style={styles.icon} resizeMode="contain" resizeMethod="resize" />
+					<Image source={require('../assets/icons/logout.png')} style={styles.icon} resizeMode="contain" resizeMethod="resize" />
 				</Pressable>
 			</View>
 			<FocusedStatusBar backgroundColor='#001F2D'/>
@@ -33,11 +33,11 @@ const Start = ({ navigation }) => {
 				<Pressable style={styles.buttonStartScreen} onPress={()=>navigation.navigate("ChatBot")}>
 						<Text style={styles.buttonText}>Chat Bot</Text>
 				</Pressable>
+				<Pressable style={styles.buttonStartScreen} onPress={()=>navigation.navigate("Goals")}>
+						<Text style={styles.buttonText}>Goals</Text>
+				</Pressable>
 				<Pressable style={styles.buttonStartScreen} onPress={()=>navigation.navigate("Favourite")}>
 						<Text style={styles.buttonText}>Favourites</Text>
-				</Pressable>
-				<Pressable style={styles.buttonStartScreen} onPress={()=>navigation.navigate("Goal")}>
-						<Text style={styles.buttonText}>Goals</Text>
 				</Pressable>
 			</View>
 

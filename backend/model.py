@@ -28,3 +28,9 @@ class Question(db.Model):
     cChange = db.Column(db.String(40), nullable=False)
     cEnd = db.Column(db.String(40), nullable=False)
     cGoal = db.Column(db.String(40), nullable=False)
+
+class Goal(db.Model):
+    __tablename__ = 'Goal'
+    title = db.Column(db.String(40), primary_key=True, nullable=False)
+    description = db.Column(db.String(40), primary_key=True, nullable=False)
+    date = db.Column(db.String(40), primary_key=True, nullable=False)

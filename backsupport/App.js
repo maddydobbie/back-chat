@@ -12,6 +12,8 @@ import ConfirmResetPwd from './screens/ConfirmResetPwd';
 import Start from './screens/Start';
 import ChatBot from './screens/ChatBot';
 import Test from './screens/Test';
+import Goals from './screens/Goals';
+import Favourite from './screens/Favourite';
 
 const Stack = createStackNavigator();
 
@@ -45,6 +47,8 @@ const App = () => {
         <Stack.Screen name="Start" component={Start} />
         <Stack.Screen name="ChatBot" component={ChatBot} />
         <Stack.Screen name="Test" component={Test} />
+        <Stack.Screen name="Goals" component={Goals} />
+        <Stack.Screen name="Favourite" component={Favourite} />
       </Stack.Navigator>
     </NavigationContainer>
   );

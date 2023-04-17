@@ -5,7 +5,6 @@ import logo from "../assets/images/logo.png"
 import { FocusedStatusBar } from '../components';
 import styles from '../assets/style'
 
-//export default class Button
 
 const Favourite = ({ navigation }) => {
 
@@ -20,13 +19,13 @@ const Favourite = ({ navigation }) => {
 	return (
 		<SafeAreaView style={{ flex: 1 }}>
 			<View style={styles.container}>
-				<Pressable onPress={()=>navigation.navigate("Home")}>
+				<Pressable onPress={()=>navigation.navigate("Start")}>
 					<Image source={require('../assets/icons/back.png')} style={styles.icon} resizeMode="contain" resizeMethod="resize" />
 				</Pressable>
 			</View>
 			<FocusedStatusBar backgroundColor='#001F2D'/>
 			<View style={styles.centered}>
-                <Text style={styles.buttonText}>Yet to be implemented</Text>
+                <Text style={styles.buttonText}>Coming soon...</Text>
 			</View>
 
 		</SafeAreaView>

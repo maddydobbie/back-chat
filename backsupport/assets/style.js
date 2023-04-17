@@ -33,6 +33,13 @@ export default StyleSheet.create({
         justifyContent: "center",
         lineHeight: 25,
     },
+    buttonTextSecondary: {
+        fontSize: 25,
+        fontcolor: '#14213D',
+        textAlign: "center",
+        justifyContent: "center",
+        lineHeight: 25,
+    },
     buttonForgotPwdText: {
         fontSize: 25,
         color: '#14213D',
@@ -190,6 +197,43 @@ export default StyleSheet.create({
     errorMsgContainer: {
         height: 20,
         width: 200
-    }
-
+    },
+    modal: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#FCA311',
+        borderRadius: 10,
+    },
+    modalFormInput: {
+        backgroundColor: '#E5E5E5',
+        borderColor: '#14213D',
+        textAlign: 'center',
+        fontSize: 20,
+        borderRadius: 5,
+        paddingVertical: 10,
+        width: '80%',
+    },
+    buttonModalMain: {
+        backgroundColor: '#14213D',
+        borderRadius: 10,
+        paddingVertical: 15,
+        paddingHorizontal: 10,
+        marginTop: 15,
+        marginLeft: 100,
+        marginRight: 100,
+        width: '30%',
+        opacity: 1
+    },
+    buttonModalSecondary: {
+        backgroundColor: '#E5E5E5',
+        borderRadius: 10,
+        paddingVertical: 15,
+        paddingHorizontal: 10,
+        marginTop: 15,
+        marginLeft: 100,
+        marginRight: 100,
+        width: '30%',
+        opacity: 1
+    },
 });

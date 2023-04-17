@@ -1,18 +1,12 @@
-import { useState } from 'react';
-import { View, SafeAreaView, FlatList, Text } from 'react-native';
-import { Image, StyleSheet, Pressable, TextInput, TouchableOpacity } from 'react-native';
-import { createStackNavigator, createAppContainer } from  "@react-navigation/native";
-import { useForm, Controller, useWatch } from 'react-hook-form';
+import { View, SafeAreaView, Text } from 'react-native';
+import { Image, Pressable, TextInput, TouchableOpacity } from 'react-native';
+import { useForm, Controller } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { isEmpty } from 'lodash';
 
 import styles from '../assets/style'
 import logo from "../assets/images/logo.png";
-import { COLORS, FONTS } from "../constants";
-import { HomeHeader, FocusedStatusBar } from '../components';
-import Home from './Home';
-import Login from './Login';
+import { FocusedStatusBar } from '../components';
 
 const schema = yup.object().shape({
 	email: yup.string()

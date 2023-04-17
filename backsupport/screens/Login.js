@@ -39,7 +39,6 @@ const Login = ({ navigation }) => {
 	const showAlert = () =>
   Alert.alert(
     "Incorrect Login Information",
-    "YEET",
     [
       {
         text: "Cancel",

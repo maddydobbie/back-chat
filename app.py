@@ -107,6 +107,20 @@ def login():
         "success": True
     })
 
+@app.route('/goal', methods=['POST'])
+def goal():
+    content = request.json 
+    print(content)
+
+    # add goal to database
+    goal = User(title = content["title"], description = content["description"], date = content["date"] )
+    db.session.add(goal)
+    db.session.commit()
+
+    return jsonify({
+        "success": True
+    })
+
 @app.route('/chatbot', methods=['POST', 'GET'])
 def chatbot():
 

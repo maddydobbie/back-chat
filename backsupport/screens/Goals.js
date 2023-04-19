@@ -46,30 +46,34 @@ const Goals = ({ navigation }) => {
 		const requestOptions = {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ title: data["title"], description: data["decription"], date: data["date"] })
+			body: JSON.stringify({ title: data["title"], description: data["description"], date: data["date"] })
 		};
 		console.log("here???");
 		fetch('https://back-support-thesis.herokuapp.com/goal', requestOptions)
 		.then((response) => {
-			console.log("did we get hre?");
-	    	const res = response.json();
-			console.log(res);
-	    	console.log("new goal?");
-	    	// console.log(json);
-			response.text().then(b => console.log("BLOB", b))
-	    	return response;
+			console.log("did we get hre?????/?");
+	    	// const res = response.json();
+			// console.log(res);
+	    	// console.log("new goal?");
+	    	// // console.log(json);
+			// response.text().then(b => console.log("BLOB", b))
+	    	// return response;
+
+			console.log(response);
+	    	console.log("hello");
+	    	return response.json();
 	    })
 		.then((json) => {	
-			console.log(json)
-			if (json.success == true) {
-	    		// clsoe modal
-				// display new goal on goal page
-	    		console.log("yay added a goal");
+			console.log(json);
+	    	if (json.success == true) {
+	    		// close modal
+				// display goal
+	    		console.log("yay goalssss");
 	    	} else {
 	    		// alert 
 	    		console.log("nope youre a dummy.");
 	    		title = ' ';
-				decription = ' ';
+				description = ' ';
 				date = ' ';
 	    	}
 		})

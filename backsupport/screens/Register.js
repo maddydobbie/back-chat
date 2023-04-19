@@ -51,7 +51,7 @@ const Register = ({ navigation }) => {
 	    fetch('https://back-support-thesis.herokuapp.com/signup', requestOptions)
 	    .then((response) => {
 	    	console.log(response);
-	    	console.log("hello");
+	    	//console.log("hello");
 	    	return response.json();
 	    })
 	    .then((json) => {

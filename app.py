@@ -44,7 +44,6 @@ if not path.exists('./app.db'):
 
 @app.route('/')
 def serve():
-    print("HIT THE HOMEPAGE")
     return "Flask backend for BackSupport. Deployed on Heroku. See https://github.com/maddydobbie/BackSupport for more information."
 
 

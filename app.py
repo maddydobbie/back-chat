@@ -4,6 +4,8 @@ from flask_sqlalchemy import SQLAlchemy
 import csv
 import json
 
+import logging
+
 from os import path
 from backend.config import Config
 from backend.model import Goal, User, Question
@@ -24,7 +26,7 @@ if not path.exists('./app.db'):
     with app.app_context():
         db.session.commit()
     # chatbot tings
-        print("im new max")
+        print("im new")
         db.session.query(Question).delete()
         db.session.query(User).delete()
         #open file
@@ -113,7 +115,7 @@ def goal():
     print("PLEASE GOD")
 
     # add goal to database
-    goal = Goal(title = content["title"], description = content["description"], date = content["date"] )
+    goal = Goal(title = content["title"], description = content["description"], date = content["date"])
     db.session.add(goal)
     db.session.commit()
 
@@ -205,7 +207,7 @@ def chatbot():
         })    
         
 
-# if __name__ != '__main__':
-#     gunicorn_logger = logging.getLogger('gunicorn.error')
-#     app.logger.handlers = gunicorn_logger.handlers
-#     app.logger.setLevel(gunicorn_logger.level)
+if __name__ != '__main__':
+    gunicorn_logger = logging.getLogger('gunicorn.error')
+    app.logger.handlers = gunicorn_logger.handlers
+    app.logger.setLevel(gunicorn_logger.level)

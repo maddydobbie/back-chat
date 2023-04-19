@@ -127,7 +127,7 @@ export default StyleSheet.create({
         backgroundColor: '#14213D',
         marginTop: 30,
         width: 375,
-        height: 600,
+        height: 450,
         borderRadius: 10,
     },
     chatBotItems: {
@@ -162,7 +162,7 @@ export default StyleSheet.create({
         fontSize: 20,
     },
     chatBotContainer: {
-        paddingVertical: 10,
+        paddingVertical: 5,
         paddingHorizontal: 10,
     },
     responseItemInner: {
@@ -184,6 +184,7 @@ export default StyleSheet.create({
         borderRadius: 10,
         marginRight:5,
         marginLeft: 5,
+        height: 90
     },
     responseText: {
         color: '#E5E5E5',

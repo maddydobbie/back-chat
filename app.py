@@ -17,11 +17,13 @@ cors = CORS(app)
 db.init_app(app)
 
 
+
+
 if not path.exists('./app.db'):
    # from backend.model import *
     print('Creating app.db...')
     with app.app_context():
-        db.session.commit()
+        db.create_all()
     # chatbot tings
         print("im new")
         db.session.query(Question).delete()

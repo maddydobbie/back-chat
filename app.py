@@ -109,15 +109,15 @@ def login():
 
 @app.route('/goal', methods=['POST', 'GET'])
 def goal():
-    # content = request.json 
-    # print("PLEASE GOD")
+    content = request.json 
+    print("PLEASE GOD")
 
-    # # add goal to database
-    # goal = Goal(title = content["title"], description = content["description"], date = content["date"])
-    # db.session.add(goal)
-    # db.session.commit()
+    # add goal to database
+    goal = Goal(title = content["title"], description = content["description"], date = content["date"])
+    db.session.add(goal)
+    db.session.commit()
 
-    # print("sucessfully added goal to db")
+    print("sucessfully added goal to db")
 
     return jsonify({
         "success": True

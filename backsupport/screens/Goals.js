@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { View, SafeAreaView, Text } from 'react-native';
+import { View, SafeAreaView, Text, FlatList } from 'react-native';
 import { Image, Pressable, TextInput, TouchableOpacity } from 'react-native';
 import { useForm, Controller } from 'react-hook-form';
 import { FocusedStatusBar } from '../components';
@@ -51,27 +51,19 @@ const Goals = ({ navigation }) => {
 		console.log("here???");
 		fetch('https://back-support-thesis.herokuapp.com/goal', requestOptions)
 		.then((response) => {
-			console.log("did we get hre?????/?");
-	    	// const res = response.json();
-			// console.log(res);
-	    	// console.log("new goal?");
-	    	// // console.log(json);
-			// response.text().then(b => console.log("BLOB", b))
-	    	// return response;
-
-			console.log(response);
-	    	console.log("hello");
+			//console.log("did we get here?");
 	    	return response.json();
 	    })
 		.then((json) => {	
-			console.log(json);
 	    	if (json.success == true) {
 	    		// close modal
+				handleModal();
 				// display goal
-	    		console.log("yay goalssss");
+				// need a list to display list of goals from db
+				
 	    	} else {
-	    		// alert 
-	    		console.log("nope youre a dummy.");
+	    		// alert and reset values
+	    		//console.log("nope youre a dummy.");
 	    		title = ' ';
 				description = ' ';
 				date = ' ';
@@ -94,6 +86,17 @@ const Goals = ({ navigation }) => {
 			<View style={styles.centered}>
 				<View style={{ zIndex: 0 }}>
 					<Text style={styles.title}>Goals Centre</Text>
+				</View>
+				<View>
+					{/* <FlatList
+						data={items}
+						keyExtractor={(item, index) => index}
+						renderItem={({item, index}) => (
+						<View style={chatStyles[index % chatStyles.length]}>
+							<Text style={styles.chatBotText}>{item}</Text>
+						</View>
+						)}
+					/> */}
 				</View>
 				<Pressable style={styles.buttonStartScreen} onPress={handleModal}>
 					<Text style={styles.buttonText}>Add goal</Text>

@@ -40,10 +40,7 @@ const Goals = ({ navigation }) => {
 	const handleModal = () => setIsModalVisible(() => !isModalVisible);
 
 	function submit(data) {
-		
-
-
-		console.log("hello");
+		console.log("data from form:");
 		console.log(data);
 
 		const requestOptions = {

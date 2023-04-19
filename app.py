@@ -1,6 +1,5 @@
 from flask import Flask, send_from_directory, request, jsonify
 from flask_cors import CORS, cross_origin
-from flask_sqlalchemy import SQLAlchemy
 import csv
 import json
 
@@ -8,15 +7,13 @@ import logging
 
 from os import path
 from backend.config import Config
-from backend.model import Goal, User, Question
+from backend.model import db, Goal, User, Question
 
 app = Flask(__name__,static_folder='backsupport/build',static_url_path='')
 
 app.config.from_object(Config)
 
 cors = CORS(app)
-
-db = SQLAlchemy()
 db.init_app(app)
 
 

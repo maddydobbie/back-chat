@@ -34,6 +34,8 @@ const Goals = ({ navigation }) => {
 	const descriptionWatch = watch('description');
 	const dateWatch = watch('date');
 
+	const [items, setItems] = useState([]);
+
   	const chatStyles = [styles.chatBotItem, styles.userItem];
 
 	const [isModalVisible, setIsModalVisible] = useState(false);
@@ -46,7 +48,7 @@ const Goals = ({ navigation }) => {
 		const requestOptions = {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ title: data["title"], description: data["description"], date: data["date"] })
+			body: JSON.stringify({ title: data["title"], description: data["description"], date: data["date"], items: items })
 		};
 		console.log("here???");
 		fetch('https://back-support-thesis.herokuapp.com/goal', requestOptions)
@@ -58,6 +60,7 @@ const Goals = ({ navigation }) => {
 	    	if (json.success == true) {
 	    		// close modal
 				handleModal();
+				console.log(json.items)
 				// display goal
 				// need a list to display list of goals from db
 				
@@ -88,7 +91,7 @@ const Goals = ({ navigation }) => {
 					<Text style={styles.title}>Goals Centre</Text>
 				</View>
 				<View>
-					{/* <FlatList
+					<FlatList
 						data={items}
 						keyExtractor={(item, index) => index}
 						renderItem={({item, index}) => (
@@ -96,7 +99,7 @@ const Goals = ({ navigation }) => {
 							<Text style={styles.chatBotText}>{item}</Text>
 						</View>
 						)}
-					/> */}
+					/> 
 				</View>
 				<Pressable style={styles.buttonStartScreen} onPress={handleModal}>
 					<Text style={styles.buttonText}>Add goal</Text>

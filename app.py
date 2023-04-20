@@ -110,6 +110,7 @@ def goal():
     content = request.json 
     print("PLEASE GOD")
 
+    print("new goal is:")
     goalItems = content["items"]
     print(goalItems)
 
@@ -117,6 +118,9 @@ def goal():
     goal = Goal(title = content["title"], description = content["description"], date = content["date"])
     db.session.add(goal)
     db.session.commit()
+
+    print("new goal is:")
+    print(goal)
 
     print("sucessfully added goal to db")
     goalItems.append(goal)

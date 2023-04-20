@@ -60,7 +60,8 @@ const Goals = ({ navigation }) => {
 	    	if (json.success == true) {
 	    		// close modal
 				handleModal();
-				console.log(json.items)
+				console.log("hello");
+				console.log(json);
 				// display goal
 				// need a list to display list of goals from db
 				
@@ -91,7 +92,7 @@ const Goals = ({ navigation }) => {
 					<Text style={styles.title}>Goals Centre</Text>
 				</View>
 				<View>
-					<FlatList
+					{/* <FlatList
 						data={items}
 						keyExtractor={(item, index) => index}
 						renderItem={({item, index}) => (
@@ -99,7 +100,7 @@ const Goals = ({ navigation }) => {
 							<Text style={styles.chatBotText}>{item}</Text>
 						</View>
 						)}
-					/> 
+					/>  */}
 				</View>
 				<Pressable style={styles.buttonStartScreen} onPress={handleModal}>
 					<Text style={styles.buttonText}>Add goal</Text>

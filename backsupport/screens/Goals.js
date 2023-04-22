@@ -17,6 +17,8 @@ const schema = yup.object().shape({
 		.required("Date is required")
 })
 
+const items = [];
+
 
 
 const Goals = ({ navigation }) => {

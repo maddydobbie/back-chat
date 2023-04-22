@@ -113,6 +113,7 @@ def goal():
     print("new goal is:")
     goalItems = content["items"]
     print(goalItems)
+    print(content)
 
     # add goal to database
     goal = Goal(title = content["title"], description = content["description"], date = content["date"])

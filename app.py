@@ -125,6 +125,7 @@ def goal():
 
     print("sucessfully added goal to db")
     goalItems.append(goal)
+    print("tell me why")
 
     return jsonify({
         "success": True,

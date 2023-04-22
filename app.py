@@ -123,8 +123,14 @@ def goal():
     print("new goal is:")
     print(goal)
 
+    g = str(goal)
+
+    print("new str goal is:")
+    print(g)
+
+
     print("sucessfully added goal to db")
-    goalItems.append(goal)
+    goalItems.append(g)
     print("tell me why")
 
     return jsonify({

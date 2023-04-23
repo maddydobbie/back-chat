@@ -200,7 +200,6 @@ def chatbot():
         })
     else:
         items = []
-        #print("get")
         # get starter question from db
         question = Question.query.filter_by(category = "starter").first()
 

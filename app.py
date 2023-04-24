@@ -133,10 +133,9 @@ def goal():
     g = str(goal)
 
     me = Object()
-    me.name = "Onur"
-    me.age = 35
-    me.dog = Object()
-    me.dog.name = "Apollo"
+    me.title = content["title"]
+    me.description = content["description"]
+    me.date = content["date"]
 
     print(me)
 

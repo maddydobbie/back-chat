@@ -65,6 +65,7 @@ const Goals = ({ navigation }) => {
 				console.log("hello");
 				setItems(json.items);
 				console.log(items);
+				console.log(items[0])
 				// display goal
 				// need a list to display list of goals from db
 				

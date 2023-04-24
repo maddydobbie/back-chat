@@ -127,24 +127,19 @@ def goal():
     db.session.add(goal)
     db.session.commit()
 
-    print("new goal is:")
-    print(goal)
-
-    g = str(goal)
-
     me = Object()
     me.title = content["title"]
     me.description = content["description"]
     me.date = content["date"]
 
-    print("this is just me:")
+    print("this is goal:")
     print(me)
 
     print("json version:")
     print(me.toJSON())
 
     print("sucessfully added goal to db")
-    goalItems.append(me)
+    goalItems.append(content["title"])
     print("tell me why")
 
     return jsonify({

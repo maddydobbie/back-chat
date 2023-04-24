@@ -137,12 +137,14 @@ def goal():
     me.description = content["description"]
     me.date = content["date"]
 
+    print("this is just me:")
     print(me)
 
+    print("json version:")
     print(me.toJSON())
 
     print("sucessfully added goal to db")
-    goalItems.append(g)
+    goalItems.append(me)
     print("tell me why")
 
     return jsonify({

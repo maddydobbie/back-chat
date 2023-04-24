@@ -139,11 +139,14 @@ def goal():
     print(me.toJSON())
 
     print("sucessfully added goal to db")
-    goalItems.append(me)
+    goalItems.append(content["title"])
     print("tell me why")
 
     return jsonify({
         "success": True,
+        "title": content["title"],
+        "description": content["description"],
+        "date": content["date"],
         "items": goalItems,
     })
 

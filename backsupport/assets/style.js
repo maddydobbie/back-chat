@@ -165,6 +165,12 @@ export default StyleSheet.create({
         paddingVertical: 5,
         paddingHorizontal: 10,
     },
+    goalContainer: {
+        //color: '#E5E5E5',
+        paddingVertical: 1,
+        paddingHorizontal: 10,
+        height: 400,
+    },
     responseItemInner: {
         paddingHorizontal: 5,
         paddingVertical: 5,
@@ -236,5 +242,14 @@ export default StyleSheet.create({
         marginRight: 100,
         width: '30%',
         opacity: 1
+    },
+    goalListContainer: {
+        backgroundColor: '#E5E5E5',
+        borderRadius: 3,
+        paddingVertical: 10,
+        paddingHorizontal: 5,
+        width: 300,
+        marginBottom: 10,
+
     },
 });

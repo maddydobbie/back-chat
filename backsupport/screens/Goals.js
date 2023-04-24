@@ -95,16 +95,16 @@ const Goals = ({ navigation }) => {
 				<View style={{ zIndex: 0 }}>
 					<Text style={styles.title}>Goals Centre</Text>
 				</View>
-				<View>
-					{/* <FlatList
+				<View style={styles.goalContainer}> 
+					<FlatList
 						data={items}
 						keyExtractor={(item, index) => index}
 						renderItem={({item, index}) => (
-						<View style={chatStyles[index % chatStyles.length]}>
+						<View style={styles.goalListContainer}>
 							<Text style={styles.chatBotText}>{item}</Text>
 						</View>
 						)}
-					/>  */}
+					/> 
 				</View>
 				<Pressable style={styles.buttonStartScreen} onPress={handleModal}>
 					<Text style={styles.buttonText}>Add goal</Text>

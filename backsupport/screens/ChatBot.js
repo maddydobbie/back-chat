@@ -67,9 +67,9 @@ const ChatBot = ({ navigation }) => {
 	    })
 	    .then((json) => {
 	    	// show the q and response
-	    	console.log("tresssssssssee");
+	    	//console.log("tresssssssssee");
 	    	console.log(json);
-	    	console.log("treee");
+	    	//console.log("treee");
 	    	setLoading(false);
 	    	if (json.endConvo == true) {
 	    		navigation.navigate("Start");

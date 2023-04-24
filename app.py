@@ -16,6 +16,11 @@ app.config.from_object(Config)
 cors = CORS(app)
 db.init_app(app)
 
+class Object:
+    def toJSON(self):
+        return json.dumps(self, default=lambda o: o.__dict__, 
+            sort_keys=True, indent=4)
+
 
 if not path.exists('./app.db'):
    # from backend.model import *
@@ -111,6 +116,8 @@ def goal():
     print("PLEASE GOD")
 
     print("new goal is:")
+
+    # set the list before new goal is added
     goalItems = content["items"]
     print(goalItems)
     print(content)
@@ -125,9 +132,15 @@ def goal():
 
     g = str(goal)
 
-    print("new str goal is:")
-    print(g)
+    me = Object()
+    me.name = "Onur"
+    me.age = 35
+    me.dog = Object()
+    me.dog.name = "Apollo"
 
+    print(me)
+
+print(me.toJSON())
 
     print("sucessfully added goal to db")
     goalItems.append(g)

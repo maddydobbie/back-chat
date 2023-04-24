@@ -95,7 +95,7 @@ const Goals = ({ navigation }) => {
 					<Text style={styles.title}>Goals Centre</Text>
 				</View>
 				<View>
-					<FlatList
+					{/* <FlatList
 						data={items}
 						keyExtractor={(item, index) => index}
 						renderItem={({item, index}) => (
@@ -103,7 +103,7 @@ const Goals = ({ navigation }) => {
 							<Text style={styles.chatBotText}>{item}</Text>
 						</View>
 						)}
-					/> 
+					/>  */}
 				</View>
 				<Pressable style={styles.buttonStartScreen} onPress={handleModal}>
 					<Text style={styles.buttonText}>Add goal</Text>

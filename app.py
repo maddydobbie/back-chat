@@ -140,7 +140,7 @@ def goal():
 
     print(me)
 
-print(me.toJSON())
+    print(me.toJSON())
 
     print("sucessfully added goal to db")
     goalItems.append(g)

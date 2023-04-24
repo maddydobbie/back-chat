@@ -36,22 +36,15 @@ const Login = ({ navigation }) => {
 		},
 	})
 
+
 	const showAlert = () =>
-  Alert.alert(
-    "Incorrect Login Information",
-    [
-      {
-        text: "Cancel",
-        onPress: () => reset(),
-        style: "cancel",
-      },
-    ],
-    {
-      cancelable: true,
-      onDismiss: () =>
-        reset()
-    }
-  );
+	Alert.alert('Incorrect Login Information', ' ', [
+		{
+		  text: 'OK',
+		  onPress: () => reset(),
+		  style: 'cancel',
+		},
+	  ]);
 
 	const userWatch = watch('username');
 	const pwdWatch = watch('pwd');
@@ -77,6 +70,7 @@ const Login = ({ navigation }) => {
 	    		navigation.navigate("Start")
 	    	} else {
 	    		showAlert();
+				//handleLoginError();
 	    		console.log("bad boi");
 	    	}
 	    })
